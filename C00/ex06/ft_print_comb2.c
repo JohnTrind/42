@@ -1,44 +1,37 @@
 #include <unistd.h>
-int  ft_putchar(char c)
+
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return(c);
 }
-void	 ft_print_comb(void)
+
+void	ft_print_comb2(void)
 {
-	int numb1 = '0' ;
-	int numb2 = '0' ;
-	int numb3 = '0' ;
-	int numb4 = '0' ;
-	int vir = ',';
-	int  espa = ' ' ;
-	while(numb1 <= '9'){
-		while(numb2 <= '8'){
-			while(numb3 <='9'){
-				while(numb4 <='9'){
-					ft_putchar(numb1);
-					ft_putchar(numb2);
-					ft_putchar(espa);
-					ft_putchar(numb3);
-					ft_putchar(numb4);
-					ft_putchar(vir);
-					ft_putchar(espa);
-					numb4++;
-				}
-				numb3++;
-				numb4 = '0';
+	int first;
+	int second;
+
+	first = -1;
+	while (first++ < 98)
+	{
+		second = first;
+		while (second++ < 99)
+		{
+			ft_putchar((first / 10) + '0');
+			ft_putchar((first % 10) + '0');
+			ft_putchar(' ');
+			ft_putchar((second / 10) + '0');
+			ft_putchar((second % 10) + '0');
+			if (first != 98)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
 			}
-			numb2++;
-			numb3 = '0';
-			numb4 = '0';
 		}
-		numb1++;
-		numb2 = '0';
-		numb3 = '0';
-		numb4 = '0';
 	}
 }
-int main(){
-	 ft_print_comb();
+
+int main(void)
+{
+	ft_print_comb2();
 	return(0);
 }
