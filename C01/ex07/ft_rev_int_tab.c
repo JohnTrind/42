@@ -1,27 +1,24 @@
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_rev_int_tab(int *tab, int size)
 {
 	int		i;
-	int		ri;
-	int		swap;
+	int		temp;
 
 	i = 0;
-	ri = size - 1;
-	while (i < (size / 2))
+	size--;
+	while (i < size)
 	{
-		swap = tab[i];
-		tab[i] = tab[ri];
-		tab[ri] = swap;
+		temp = tab[i];
+		tab[i] = tab[size];
+		tab[size] = temp;
 		i++;
-		ri--;
+		size--;
 	}
+    return(teste);
 }
 
 int main()
 {
-    int tab = "12345";
-    ft_rev_int_tab(tab , 5);
-    printf("%s\n", tab);
-    return(0);
+    int teste[] = {1,21,3232,323};
+    printf("%d\n", t_rev_int_tab(teste));
+
 }
-
-
