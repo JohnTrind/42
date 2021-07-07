@@ -21,4 +21,4 @@ int main()
     int teste[] = {1,21,3232,323};
     printf("%d\n", t_rev_int_tab(teste));
 
-}
+} test
